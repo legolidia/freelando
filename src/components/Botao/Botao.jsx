@@ -6,15 +6,12 @@ const BotaoEnviar = styled.button`
   height: 50px;
   font-weight: 400;
   font-size: 14px;
-  line-height: 17px;
-  border-radius: 50px;
   border: none;
   cursor: pointer;
   color: #FFFFFF;
-  margin-top: 60px;
-  margin-left: auto;
   display: block;
   padding: 0 40px;
+  margin: auto auto;
   :hover {
     background-color: ${props => props.theme.cores.secundarias.b};
     transition: all 0.5s;

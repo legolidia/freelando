@@ -14,7 +14,7 @@ const ImagemCabecalho = styled.header`
 export const Cabecalho = () => {
     return (
         <ImagemCabecalho>
-            <img src="./imagens-freelando/Imagens/image 1.png" alt="logo" height="70vh"/>
+            <img src="./imagens/Imagens/image 1.png" alt="logo" height="70vh"/>
         </ImagemCabecalho>
     )
 }
