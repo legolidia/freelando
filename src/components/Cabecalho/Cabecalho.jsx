@@ -5,10 +5,7 @@ const ImagemCabecalho = styled.header`
     padding: ${props => props.theme.espacamentos.m};
     height: 10vh;
 
-    @media (max-width: 768px) {
-        padding: ${props => props.theme.espacamentos.s};
-        height: 8vh;
-      }
+   
 `
 
 export const Cabecalho = () => {
