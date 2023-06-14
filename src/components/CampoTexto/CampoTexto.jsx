@@ -1,35 +1,47 @@
 import styled from "@emotion/styled"
-
-const LabelEstilizada = styled.label`
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    margin: ${props => props.theme.espacamentos.xs};
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-`
+import { useState } from "react";
 
 const InputEstilizada = styled.input`
     display: block; 
     width: 100%;
     box-sizing: border-box;
-    margin-top: ${props => props.theme.espacamentos.xs};
+    margin-top: 15px;
+    margin-bottom: ${props => props.theme.espacamentos.s};
     background: ${props => props.theme.cores.brancas}; 
-    border: 1px solid;
-    border-color: ${props => props.theme.cores.neutras.a};
+    background-color: ${props => props.theme.cores.secundarias.a};
+    border: 0;
     border-radius: ${props => props.theme.espacamentos.s};
     height: 40px;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
+    padding: 10px;
 
+    ::placeholder {
+      color: ${props => props.theme.cores.neutras.a};
+      font-family: ${props => props.theme.fontFamily};
+      padding: 0 5px;
+    }
 `
 
-export const CampoTexto = ({ titulo }) => {
+export const CampoTexto = ({ label }) => {
+  const [placeholder, setPlaceholder] = useState(label);
+
+  const handleClick = () => {
+    setPlaceholder('');
+  };
+
+  const handleBlur = () => {
+    if (placeholder === '') {
+      setPlaceholder(label);
+    }
+  };
+
   return (
-    <LabelEstilizada>
-      {titulo}
-      <InputEstilizada />
-    </LabelEstilizada>)
-}
+    <InputEstilizada
+      placeholder={placeholder}
+      onClick={handleClick}
+      onBlur={handleBlur}
+    />
+  );
+};
